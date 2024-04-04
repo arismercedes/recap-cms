@@ -7,9 +7,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 import CMS from "decap-cms-app";
 // Initialize the CMS object
-CMS.init();
-// Now the registry is available via the CMS object.
-CMS.registerPreviewTemplate("my-template", MyTemplate);
+
 ---
 
 <!doctype html>
@@ -53,5 +51,19 @@ CMS.registerPreviewTemplate("my-template", MyTemplate);
 			</p>
 		</main>
 		<Footer />
+		<script>
+
+			CMS.init();
+
+			if (window.netlifyIdentity) {
+			  window.netlifyIdentity.on("init", user => {
+				if (!user) {
+				  window.netlifyIdentity.on("login", () => {
+					document.location.href = "/admin/";
+				  });
+				}
+			  });
+			}
+		  </script>
 	</body>
 </html>
