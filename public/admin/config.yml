@@ -1,13 +1,12 @@
 backend:
   name: github
-  repo: arismercedes/recap-cms #replace with your githu repo
+  repo: arismercedes/recap-cms
   branch: master
 
 publish_mode: editorial_workflow
 media_folder: src/assets/images
 public_folder: src/assets/images
-site_url: "https://aris-decap.netlify.app/" # your site name
-
+site_url: "https://aris-decap.netlify.app/"
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
@@ -20,9 +19,3 @@ collections:
       - { label: "Publish Date", name: "pubDate", widget: "datetime" }
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
-
-
-      title: 'First post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 08 2022'
-heroImage:
